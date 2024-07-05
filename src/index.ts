@@ -6,7 +6,7 @@ import './cronJobs'
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const mongoURI = 'mongodb+srv://cngomez18:Ehz0euLkVIW55cUQ@cookie.zcx3wqz.mongodb.net/';
+const mongoURI: string = process.env.MONGO_URI as string;
 
 mongoose.connect(mongoURI).then(() => {
   console.log('Connected to MongoDB');
