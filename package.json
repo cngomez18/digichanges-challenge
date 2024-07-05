@@ -1,0 +1,32 @@
+{
+  "name": "digichanges-challenge",
+  "version": "1.0.0",
+  "description": "Challenge Fullstack;\r Implementar una RESTful API que tome la información de la API de Star Wars (https://swapi.dev/).\r Las techs a utilizar son NodeJS, queda a libre elección la herramienta para armar el API y ReactJS o NextJS para el frontend y se debe utilizar Typescript en los dos lados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cngomez18/digichanges-challenge.git"
+  },
+  "author": "Candela Gómez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cngomez18/digichanges-challenge/issues"
+  },
+  "homepage": "https://github.com/cngomez18/digichanges-challenge#readme",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.17.21",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.14.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4"
+  }
+}
