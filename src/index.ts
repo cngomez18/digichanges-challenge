@@ -2,6 +2,10 @@ import axios from 'axios';
 import express from 'express';
 import mongoose from 'mongoose';
 import './cronJobs'
+import peopleRoutes from './routes/peopleRoutes';
+import starshipRoutes from './routes/starshipRoutes';
+import planetRoutes from './routes/planetRoutes';
+import filmRoutes from './routes/filmRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,9 +18,10 @@ mongoose.connect(mongoURI).then(() => {
   console.error('Error connecting to MongoDB:', error);
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use('/api/people', peopleRoutes);
+app.use('/api/starships', starshipRoutes);
+app.use('/api/planets', planetRoutes);
+app.use('/api/films', filmRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
