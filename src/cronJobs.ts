@@ -31,7 +31,22 @@ const syncData = async () => {
 
   try {
     await Starship.deleteMany({});
-    await Starship.insertMany(starshipsData.results);
+    await Starship.insertMany(starshipsData.results.map((starship: any) => ({
+      name: starship.name,
+      starship_model: starship.model || '',  
+      starship_class: starship.starship_class || '',
+      manufacturer: starship.manufacturer || '',
+      cost_in_credits: starship.cost_in_credits || '',
+      length: starship.length || '',
+      crew: starship.crew || '',
+      passengers: starship.passengers || '',
+      max_atmosphering_speed: starship.max_atmosphering_speed || '',
+      hyperdrive_rating: starship.hyperdrive_rating || '',
+      url: starship.url || '', 
+      consumables: starship.consumables || '',
+      cargo_capacity: starship.cargo_capacity || '',
+      MGLT: starship.MGLT || ''
+    })));
     console.log('Starships data synced');
   } catch (error) {
     console.error('Error syncing starships data:', error);
@@ -55,4 +70,5 @@ const syncData = async () => {
 };
 
 
+syncData()
 cron.schedule('0 0 * * *', syncData);

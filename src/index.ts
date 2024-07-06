@@ -1,6 +1,8 @@
 import axios from 'axios';
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv'
+dotenv.config()
 import './cronJobs'
 import peopleRoutes from './routes/peopleRoutes';
 import starshipRoutes from './routes/starshipRoutes';
@@ -9,10 +11,11 @@ import filmRoutes from './routes/filmRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+console.log('Mongo URI:', process.env.MONGO_URI);
 
-const mongoURI: string = process.env.MONGO_URI as string;
+//const mongoURI: string = process.env.MONGO_URI as string;
 
-mongoose.connect(mongoURI).then(() => {
+mongoose.connect(process.env.MONGO_URI!).then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
   console.error('Error connecting to MongoDB:', error);

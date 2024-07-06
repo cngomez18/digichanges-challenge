@@ -4,6 +4,8 @@
   "description": "Challenge Fullstack;\r Implementar una RESTful API que tome la información de la API de Star Wars (https://swapi.dev/).\r Las techs a utilizar son NodeJS, queda a libre elección la herramienta para armar el API y ReactJS o NextJS para el frontend y se debe utilizar Typescript en los dos lados.",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,10 +25,12 @@
     "@types/node": "^20.14.9",
     "@types/node-cron": "^3.0.11",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.3"
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.4",
     "node-cron": "^3.0.3"
